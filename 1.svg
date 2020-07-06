@@ -6,4 +6,5 @@
     <polyline points="60 110, 65 120, 70 115, 75 130, 80 125, 85 140, 90 135, 95 150, 100 145, 120 160, 190,45"
       stroke="orange" fill="transparent" stroke-width="5"/>
     <polygon points="50 161, 55 180, 70 180, 60 190, 65 205, 50 195, 35 205, 40 190, 30 180, 45 180" stroke="orange" fill="transparent" stroke-width="5" />
+    <path d="M 60 240 H 100 V 280 H 60 V 240" stroke="red"  stroke-width="5"></path>
 </svg>
