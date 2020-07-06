@@ -1,6 +1,15 @@
 <?xml version="1.0" standalone="no"?>
 <svg width="500" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <rect x="10" y="10" width="30" rx="10000" height="30" stroke="black" fill="transparent" stroke-width="5"/>
+    <defs>
+        <style type="text/css"><![CDATA[
+          #MyRect {
+            stroke: green;
+            fill: red;
+          }
+        ]]>
+        </style>
+    </defs>
+    <rect id="MyRect" x="10" y="10" width="30" rx="10000" height="30" stroke="black" fill="transparent" stroke-width="5"/>
     <circle cx="25" cy="75" r="20" stroke="red" fill="transparent" stroke-width="5"/>
     <line x1="10" y1="110" x2="50" y2="150" stroke="black" stroke-width="5" />
     <polyline points="60 110, 65 120, 70 115, 75 130, 80 125, 85 140, 90 135, 95 150, 100 145, 120 160, 190,45"
