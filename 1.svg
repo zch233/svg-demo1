@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/css" href="style.css"?>
-<svg width="1500" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg width="1500" height="900" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <style type="text/css"><![CDATA[
           #MyRect {
@@ -80,7 +80,7 @@
   </text>
   
   <path id="my_path" d="M 20,20 C 80,60 100,40 120,20" fill="transparent" />
-  <text x="20" y="20">
+  <text x="0" y="0">
     <textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#my_path">
       A curve dfgfdgdfgdfgfgdg.
     </textPath>
@@ -93,5 +93,34 @@
     </clipPath>
   </defs>
   <circle cx="620" cy="100" r="100" clip-path="url(#cut-off-bottom)" />
+  
+  <defs>
+    <filter id="MyFilter" filterUnits="userSpaceOnUse"
+            x="142" y="612"
+            width="200" height="120">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
 
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" 
+                          specularExponent="20" lighting-color="#bbbbbb"  
+                          result="specOut">
+        <fePointLight x="-5000" y="-10000" z="20000"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" 
+                   k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="litPaint"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#MyFilter)">
+    <circle cx="200" cy="683" r="21" fill="red" />
+    <circle cx="276" cy="683" r="21" fill="red" />
+    <rect fill="red" x="200" y="662" width="76" height="42"></rect>
+    <path fill="none" stroke="red" stroke-width="10" 
+              d="M190,713 c-50,0 -50,-60 0,-60 h100 c50,0 50,60 0,60z" />
+    <text x="190" y="700" fill="#fff" stroke="black" font-size="45" font-family="Verdana">SVG</text>
+  </g>
 </svg>
