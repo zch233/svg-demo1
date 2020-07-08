@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/css" href="style.css"?>
-<svg width="1500" height="900" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg width="1500" height="900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <style type="text/css"><![CDATA[
           #MyRect {
@@ -24,8 +24,13 @@
       stroke="orange" fill="transparent" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
     <path d="M 220 120 H 290" stroke="green" stroke-width="5" stroke-dasharray="0,6" stroke-linecap="round"></path>
     <path d="M 220, 140 255, 180 290, 140" stroke="green" stroke-width="1" fill="none"></path>
-    <path fill-rule="evenodd" d="M 70, 140  150, 0 200, 100 40,100 100,0 170, 140 z" stroke="green"/>
-
+    <path id="GGG" fill-rule="evenodd" d="M 70, 140  150, 0 200, 100 40,100 100,0 170, 140 z" stroke="green"/>
+    <use xlink:href="#GGG" transform="rotate(45)"/>
+    <g stroke="black" stroke-width="2" fill="none" >
+  <ellipse id="g1" cx="400" cy="200" rx="75" ry="40" />
+  <use xlink:href="#g1" transform="rotate(30 100 100)"/>
+  <use xlink:href="#g1" transform="rotate(60 100 100)"/>
+</g>
     <defs>
       <linearGradient id="Gradient1">
         <stop class="stop1" offset="0%"/>
